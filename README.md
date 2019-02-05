@@ -208,7 +208,7 @@ plot(log(exprsGSE65517),
 ![](./inst/img/qqplot.png "STRING score distribution")
 
 ## Annotating with the sample gene set
-Taking the sample gene set from the BCB420 Resources, as well the HGNC table, I annotated the sample gene set with my mapping tool.
+Taking the sample gene set from the BCB420 Resources, as well the HGNC table, I annotated the sample gene set with my mapping tool. The annotation is also saved in extdata.
 
 ```R
 # load everything we need
@@ -242,5 +242,15 @@ cat(sprintf("\t%s\t(%s)\n", HGNC[xSet[x], "sym"], HGNC[xSet[x], "name"]))
 # GABARAP	(GABA type A receptor-associated protein)
 # LAMP1	(lysosomal associated membrane protein 1)
 # VPS33A	(VPS33A, CORVET/HOPS core subunit)
+
+# save annotation to tsv
+map <- c()
+for (x in xSet){
+  map <- c(map, names(ilmn2hugo)[unname(which(ilmn2hugo == x)[1])])
+}
+
+df <- data.frame(xSet, map)
+colnames(df) <- c("xSet_genes", "ilmn_ids")
+write.table(df, file="inst/extdata/annotated.tsv", row.names = F)
 
 ```
