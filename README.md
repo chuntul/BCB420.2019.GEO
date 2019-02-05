@@ -26,7 +26,8 @@ This package describes the workflow to download disease datasets from [the GEO d
       |__toBrowser.R               # display .md files in your browser
    |__inst/
       |__extdata/
-         |__ilmn2hugo.RData         # ILMN ID to HGNC symbol mapping tool
+         |__ilmn2hugo.RData        # ILMN ID to HGNC symbol mapping tool
+         |__annotated.tsv          # annotated sample set 
       |__img/
          |__[...]                  # image sources for .md document
       |__scripts/
