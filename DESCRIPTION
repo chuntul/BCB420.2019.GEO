@@ -1,0 +1,20 @@
+Package: BCB420.2019.GEO
+Type: Package
+Title: GEO data annotatation of human genes
+Version: 1.0.0
+Date: 2019-02-05
+Authors@R: c(
+    person("Chantal", "Ho", email = "chantalc.ho@mail.utoronto.ca", role = c("aut", "cre"))
+    )
+Description: Describes the workflow for annotating human genes with
+             GEO disease data and contains an annotated example
+             data set of genes, and a GEO probe ID to HGNC symbol ID mapping tool.
+License: file LICENSE
+Encoding: UTF-8
+LazyData: true
+Suggests: readr,
+          BiocManager,
+          biomaRt,
+          GEOquery,
+          preprocessCore
+RoxygenNote: 6.1.1
